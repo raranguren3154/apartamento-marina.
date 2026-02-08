@@ -1,0 +1,88 @@
+:root {
+    --primary: #0f172a;
+    --accent: #10b981;
+    --light: #f8fafc;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+/* Navegación */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 8%; background: var(--white);
+    position: fixed; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--primary); font-weight: 500; }
+.btn-nav { background: var(--accent); color: white !important; padding: 8px 18px; border-radius: 6px; }
+
+/* Hero */
+.hero {
+    height: 80vh;
+    background: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1500') center/cover;
+    display: flex; align-items: center; justify-content: center;
+}
+.hero-overlay {
+    background: rgba(0,0,0,0.3); width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: white; text-align: center; padding: 20px;
+}
+.hero h1 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 10px; }
+.btn-main {
+    margin-top: 20px; padding: 15px 30px; background: var(--accent);
+    color: white; text-decoration: none; border-radius: 50px; font-weight: bold;
+}
+
+/* Características */
+.features {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; padding: 40px 8%; background: var(--light);
+}
+.feature-card { background: white; padding: 20px; text-align: center; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+.feature-card span { font-size: 2rem; display: block; margin-bottom: 10px; }
+.feature-card h3 { font-size: 0.9rem; color: var(--primary); }
+
+/* Galería */
+.gallery-section { padding: 60px 8%; }
+.gallery-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 200px 200px;
+    gap: 10px; margin-top: 30px;
+}
+.photo { background-size: cover; background-position: center; border-radius: 8px; }
+.main-photo { grid-row: span 2; }
+
+/* Tarifas y FAQ */
+.pricing-faq-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px; padding: 80px 8%; background: var(--white);
+}
+.price-card { padding: 40px; border-radius: 20px; background: var(--light); text-align: center; }
+.price-card.featured { border: 2px solid var(--accent); }
+.price { font-size: 3rem; font-weight: 700; color: var(--primary); margin: 20px 0; }
+.price span { font-size: 1rem; color: #64748b; }
+.price-card ul { list-style: none; line-height: 2; margin-bottom: 20px; }
+
+details { background: var(--light); padding: 15px; margin-bottom: 10px; border-radius: 8px; cursor: pointer; }
+summary { font-weight: 600; color: var(--primary); }
+
+/* Contacto y Mapa */
+.contact-location { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
+.form-side { background: var(--primary); color: white; padding: 60px 15%; }
+.form-side form { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+.form-side input, .btn-submit { padding: 12px; border-radius: 6px; border: none; font-size: 1rem; }
+.dates { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.btn-submit { background: var(--accent); color: white; font-weight: 700; cursor: pointer; }
+
+footer { text-align: center; padding: 30px; background: #000; color: white; font-size: 0.8rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-location, .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid { height: auto; display: flex; flex-direction: column; }
+    .photo { height: 250px; }
+    .navbar { padding: 15px 5%; }
+    .nav-links { display: none; } /* En una web real aquí iría un menú hamburguesa */
+}
